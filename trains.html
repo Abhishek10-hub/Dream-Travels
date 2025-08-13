@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking</title>
+    <link rel="stylesheet" href="css/train.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Dream Travels</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Book Ticket</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Booking Section -->
+    <section class="booking">
+        <h1>Book Your Train Ticket</h1>
+        <form id="trainForm">
+            <div class="form-group">
+                <label for="from">From</label>
+                <select id="from" required>
+                    <option value="">Select Station</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Kolkata</option>
+                    <option>Chennai</option>
+                    <option>Bangalore</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="to">To</label>
+                <select id="to" required>
+                    <option value="">Select Station</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Kolkata</option>
+                    <option>Chennai</option>
+                    <option>Bangalore</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Journey Date</label>
+                <input type="date" id="date" required>
+            </div>
+
+            <button type="submit">Search Trains</button>
+        </form>
+
+        <div id="results"></div>
+    </section>
+
+    <script src="js/train.js"></script>
+</body>
+
+</html>

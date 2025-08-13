@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>All India Flights — TravelNow</title>
+    <link rel="stylesheet" href="css/flight.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">Dream Travels</div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main">
+        <section class="search-panel card">
+            <h1>Search Flights Across India</h1>
+            <form id="searchForm" class="search-form" autocomplete="off">
+                <div class="row">
+                    <label>
+                        From
+                        <select id="from" required></select>
+                    </label>
+                    <label>
+                        To
+                        <select id="to" required></select>
+                    </label>
+                    <label>
+                        Date
+                        <input type="date" id="date" required />
+                    </label>
+                    <label>
+                        Passengers
+                        <input type="number" id="pax" min="1" value="1" required />
+                    </label>
+                </div>
+
+                <div class="row row-secondary">
+                    <label>
+                        Class
+                        <select id="travelClass">
+                            <option value="Economy">Economy</option>
+                            <option value="Premium Economy">Premium Economy</option>
+                            <option value="Business">Business</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Sort by
+                        <select id="sortBy">
+                            <option value="best">Best</option>
+                            <option value="price-asc">Price: Low → High</option>
+                            <option value="price-desc">Price: High → Low</option>
+                            <option value="duration-asc">Duration: Short → Long</option>
+                        </select>
+                    </label>
+
+                    <button type="submit" class="btn-primary">Search</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="results" class="results"></section>
+    </main>
+
+    <!-- Booking Modal -->
+    <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="closeModal" title="Close">✕</button>
+            <h2 id="modalTitle">Book Flight</h2>
+            <div id="flightSummary" class="flight-summary"></div>
+
+            <form id="bookingForm" class="booking-form">
+                <label>
+                    Passenger Name
+                    <input type="text" id="passName" required />
+                </label>
+                <label>
+                    Phone
+                    <input type="tel" id="passPhone" pattern="[0-9]{10}" placeholder="10-digit number" required />
+                </label>
+                <label>
+                    Email
+                    <input type="email" id="passEmail" required />
+                </label>
+
+                <div class="booking-actions">
+                    <button type="submit" class="btn-primary">Confirm Booking</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Small confirmation toast -->
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> TravelNow — All India Flights</p>
+        </div>
+    </footer>
+
+    <script src="js/flight.js"></script>
+</body>
+
+</html>
